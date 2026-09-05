@@ -1,0 +1,2530 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMS | Biology Researcher & QC Analyst</title>
+  <meta name="description" content="Portfolio of SMS - Biology Researcher & Quality Control Analyst, Suez University Graduate">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#1a1218',
+            darker: '#120d11',
+            light: '#f0f0f0',
+            muted: '#a08898',
+            primary: '#d4789a',
+            accent: '#e8a4bf',
+            surface: '#241a20',
+            surface2: '#2a1f26',
+            border: '#33252d',
+            gold: '#e8c4a8',
+            goldLight: '#f0d4c0',
+            mint: '#d4a8b8',
+            teal: '#c47890',
+            blush: '#e8a4bf'
+          },
+          fontFamily: {
+            sans: ['Inter','system-ui','sans-serif'],
+            display: ['Playfair Display','Georgia','serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: 'Inter', system-ui, sans-serif; 
+      background: #1a1218;
+      background: radial-gradient(ellipse at 50% 50%, #2a1822 0%, #1a1218 60%, #120d11 100%);
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #1a1218; }
+    ::-webkit-scrollbar-thumb { background: #3d2a35; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #d4789a; }
+
+    /* Noise overlay - teal tinted */
+    .noise {
+      position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.02;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+    }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      33% { transform: translateY(-15px) translateX(8px); }
+      66% { transform: translateY(-8px) translateX(-5px); }
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes rotate-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes gradient-shift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    @keyframes wavy-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes dna-spin {
+      from { transform: translateY(0) rotate(0deg); }
+      to { transform: translateY(-50px) rotate(360deg); }
+    }
+    @keyframes blob-move {
+      0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0,0) scale(1); }
+      25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: translate(20px,-20px) scale(1.05); }
+      50% { border-radius: 50% 60% 30% 60% / 30% 40% 70% 50%; transform: translate(-10px,15px) scale(0.95); }
+      75% { border-radius: 40% 50% 60% 30% / 60% 50% 40% 60%; transform: translate(15px,10px) scale(1.02); }
+    }
+    @keyframes cell-float {
+      0%, 100% { transform: translate(0,0) scale(1); opacity: 0.4; }
+      25% { transform: translate(30px,-40px) scale(1.1); opacity: 0.6; }
+      50% { transform: translate(-20px,-60px) scale(0.9); opacity: 0.3; }
+      75% { transform: translate(40px,-20px) scale(1.05); opacity: 0.5; }
+    }
+
+    .animate-fade-up { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .animate-scale-in { animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-float-slow { animation: floatSlow 8s ease-in-out infinite; }
+    .animate-marquee { animation: marquee 30s linear infinite; }
+    .animate-rotate-slow { animation: rotate-slow 20s linear infinite; }
+    .animate-wavy { animation: wavy-rotate 25s linear infinite; }
+    .animate-blob { animation: blob-move 15s ease-in-out infinite; }
+    .animate-cell { animation: cell-float 12s ease-in-out infinite; }
+
+    /* Magnetic button */
+    .magnetic-btn {
+      position: relative;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .magnetic-btn::after {
+      content: '';
+      position: absolute; inset: -2px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, #d4789a, #e8a4bf, #d4789a);
+      background-size: 200% 200%;
+      animation: gradient-shift 3s ease infinite;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .magnetic-btn:hover::after { opacity: 1; }
+    .magnetic-btn:hover { transform: translateY(-3px); }
+
+    /* Glass card */
+    .glass-card {
+      background: rgba(36, 26, 32, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(51, 37, 45, 0.8);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(212, 120, 154, 0.3);
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 40px rgba(212,120,154,0.05);
+    }
+
+    /* Gradient text */
+    .text-gradient {
+      background: linear-gradient(135deg, #f0f0f0 0%, #d4789a 40%, #e8a4bf 70%, #f0c4d0 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-shift 4s ease infinite;
+    }
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #f0c4d0 0%, #e8a4bf 50%, #f0c4d0 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Project card */
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #33252d;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .project-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(14,17,23,0.9) 100%);
+      z-index: 1;
+      transition: opacity 0.5s;
+    }
+    .project-card:hover::before {
+      background: linear-gradient(180deg, transparent 0%, rgba(14,17,23,0.95) 100%);
+    }
+    .project-card:hover {
+      border-color: rgba(212, 120, 154, 0.4);
+      transform: scale(1.01);
+    }
+    .project-card img {
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .project-card:hover img {
+      transform: scale(1.08);
+    }
+    .project-card .project-info {
+      transform: translateY(20px);
+      opacity: 0.8;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .project-card:hover .project-info {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Nav */
+    .nav-link {
+      position: relative;
+      padding: 8px 0;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: #d4789a;
+      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-link:hover { color: #e8a4bf; }
+
+    /* Input */
+    .input-field {
+      background: #241a20;
+      border: 1px solid #33252d;
+      color: #f0f0f0;
+      transition: all 0.3s;
+    }
+    .input-field:focus {
+      outline: none;
+      border-color: #d4789a;
+      box-shadow: 0 0 0 3px rgba(212,120,154,0.08);
+    }
+
+    /* Skill bar */
+    .skill-bar { height: 4px; background: #2a1f26; border-radius: 2px; overflow: hidden; }
+    .skill-bar-fill { height: 100%; background: linear-gradient(90deg, #d4789a, #e8a4bf); border-radius: 2px; }
+
+    /* Timeline */
+    .timeline-dot {
+      width: 14px; height: 14px;
+      background: #d4789a;
+      border-radius: 50%;
+      border: 3px solid #1a1218;
+      box-shadow: 0 0 0 2px #d4789a;
+      position: relative;
+    }
+    .timeline-line {
+      position: absolute; left: 6px; top: 20px;
+      width: 2px; height: calc(100% - 20px);
+      background: linear-gradient(180deg, #d4789a, transparent);
+    }
+
+    /* Admin sidebar */
+    .admin-sidebar { background: #120d11; border-right: 1px solid #241a20; }
+    .admin-nav-item {
+      transition: all 0.2s;
+      border-left: 3px solid transparent;
+    }
+    .admin-nav-item:hover, .admin-nav-item.active {
+      background: rgba(212,120,154,0.08);
+      border-left-color: #d4789a;
+      color: #e8a4bf;
+    }
+
+    .toast {
+      position: fixed; bottom: 24px; right: 24px;
+      padding: 16px 24px;
+      background: #241a20;
+      border: 1px solid #d4789a;
+      border-radius: 12px;
+      color: #e8a4bf;
+      transform: translateY(100px); opacity: 0;
+      transition: all 0.4s ease;
+      z-index: 10000;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+
+    .mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .mobile-menu.open { transform: translateX(0); }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #33252d, transparent);
+    }
+
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 16px;
+      background: rgba(212,120,154,0.08);
+      border: 1px solid rgba(212,120,154,0.15);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #e8a4bf;
+      transition: all 0.3s;
+    }
+    .tag:hover {
+      background: rgba(212,120,154,0.15);
+      border-color: rgba(212,120,154,0.3);
+    }
+
+    .big-number {
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 900;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.1);
+      transition: all 0.5s;
+    }
+    .big-number:hover {
+      -webkit-text-stroke: 1px #d4789a;
+      color: rgba(212,120,154,0.1);
+    }
+
+    .horizontal-scroll {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 20px;
+    }
+    .horizontal-scroll::-webkit-scrollbar { height: 4px; }
+    .horizontal-scroll::-webkit-scrollbar-thumb { background: #3d2a35; border-radius: 2px; }
+    .horizontal-scroll > * { scroll-snap-align: start; flex-shrink: 0; }
+
+    /* Wavy circle for avatar */
+    .wavy-circle {
+      position: relative;
+      width: 320px;
+      height: 320px;
+    }
+    .wavy-circle .avatar-inner {
+      position: absolute;
+      inset: 12px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #241a20;
+      z-index: 2;
+    }
+    /* Thin organic wavy ring that rotates slowly */
+    .wavy-ring {
+      position: absolute;
+      inset: -8px;
+      border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
+      border: 1.5px solid rgba(212, 120, 154, 0.35);
+      animation: wavy-rotate 25s linear infinite;
+      z-index: 1;
+    }
+    .wavy-ring::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border-radius: 45% 55% 40% 60% / 55% 45% 55% 45%;
+      border: 1px solid rgba(212, 120, 154, 0.2);
+      animation: wavy-rotate 30s linear infinite reverse;
+    }
+
+    /* DNA Helix decoration */
+    .dna-helix {
+      position: fixed;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 120px;
+      height: 600px;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Floating cells */
+    .floating-cell {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.12;
+    }
+    .cell-1 { width: 40px; height: 40px; background: radial-gradient(circle, #d4789a 0%, transparent 70%); top: 20%; left: 10%; animation: cell-float 14s ease-in-out infinite; }
+    .cell-2 { width: 25px; height: 25px; background: radial-gradient(circle, #c07090 0%, transparent 70%); top: 60%; left: 85%; animation: cell-float 16s ease-in-out infinite 2s; }
+    .cell-3 { width: 35px; height: 35px; background: radial-gradient(circle, #b06080 0%, transparent 70%); top: 80%; left: 15%; animation: cell-float 18s ease-in-out infinite 4s; }
+    .cell-4 { width: 20px; height: 20px; background: radial-gradient(circle, #d080a0 0%, transparent 70%); top: 30%; left: 90%; animation: cell-float 12s ease-in-out infinite 1s; }
+    .cell-5 { width: 30px; height: 30px; background: radial-gradient(circle, #c07090 0%, transparent 70%); top: 50%; left: 5%; animation: cell-float 15s ease-in-out infinite 3s; }
+
+    /* Organic blobs */
+    .blob {
+      position: fixed;
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.08;
+    }
+    .blob-1 { width: 400px; height: 400px; background: #d4789a; top: -100px; left: -100px; animation: blob-move 20s ease-in-out infinite; }
+    .blob-2 { width: 350px; height: 350px; background: #b86080; bottom: -80px; right: -80px; animation: blob-move 18s ease-in-out infinite 5s; }
+    .blob-3 { width: 300px; height: 300px; background: #c07090; top: 40%; left: 60%; animation: blob-move 22s ease-in-out infinite 10s; }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <!-- Background organic blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- Floating cells -->
+  <div class="floating-cell cell-1"></div>
+  <div class="floating-cell cell-2"></div>
+  <div class="floating-cell cell-3"></div>
+  <div class="floating-cell cell-4"></div>
+  <div class="floating-cell cell-5"></div>
+
+  <!-- DNA Helix SVG -->
+  <svg class="dna-helix" viewBox="0 0 100 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="dnaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#d4789a;stop-opacity:0.4" />
+        <stop offset="50%" style="stop-color:#e8a4bf;stop-opacity:0.4" />
+        <stop offset="100%" style="stop-color:#c07090;stop-opacity:0.4" />
+      </linearGradient>
+    </defs>
+    <path d="M50 0 Q80 50 50 100 Q20 150 50 200 Q80 250 50 300 Q20 350 50 400" stroke="url(#dnaGrad)" stroke-width="2" fill="none"/>
+    <path d="M50 0 Q20 50 50 100 Q80 150 50 200 Q20 250 50 300 Q80 350 50 400" stroke="url(#dnaGrad)" stroke-width="2" fill="none"/>
+    <circle cx="50" cy="0" r="4" fill="#d4789a" opacity="0.5"/>
+    <circle cx="50" cy="100" r="4" fill="#e8a4bf" opacity="0.5"/>
+    <circle cx="50" cy="200" r="4" fill="#c07090" opacity="0.5"/>
+    <circle cx="50" cy="300" r="4" fill="#d4789a" opacity="0.5"/>
+    <circle cx="50" cy="400" r="4" fill="#e8a4bf" opacity="0.5"/>
+  </svg>
+
+  <div id="root"></div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+
+    const { useState, useEffect, useContext, createContext, useRef } = React;
+
+    const defaultData = {
+      profile: {
+        name: "SMS",
+        title: "Biology Researcher & QC Analyst",
+        location: "Suez, Egypt",
+        email: "",
+        phone: "",
+        website: "",
+        bioAr: "باحثة في مجال علم الأحياء، متخرجة من كلية العلوم جامعة السويس. أمتلك شغفاً كبيراً باستكشاف عالم الخلايا والكائنات الدقيقة. أعمل في مجال مراقبة جودة التحاليل المخبرية والبحث العلمي، أسعى دائماً لتقديم نتائج دقيقة وموثوقة تسهم في تطوير المجال.",
+        bioEn: "A Biology researcher and Quality Control analyst, graduated from the Faculty of Science, Suez University. I have a deep passion for exploring the world of cells and microorganisms. I work in laboratory quality control and scientific research, always striving to deliver accurate and reliable results that contribute to advancing the field.",
+        avatar: "",
+        social: { linkedin: "", researchgate: "", github: "", twitter: "" }
+      },
+      projects: [
+        { id: "1", title: "Cell Culture Analysis", category: "research", description: "Comprehensive analysis of cell cultures under various environmental conditions, documenting growth patterns and morphological changes using advanced microscopy techniques.", thumbnail: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&q=80", images: [], tools: ["Microscopy","Cell Culture","Data Analysis"], link: "", date: "2024", featured: true },
+        { id: "2", title: "Water Quality Assessment", category: "qc", description: "Quality control analysis of water samples for microbial contamination, chemical composition, and safety standards compliance for a local environmental project.", thumbnail: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200&q=80", images: [], tools: ["QC Protocols","Microbiology","Reporting"], link: "", date: "2024", featured: true },
+        { id: "3", title: "Bacterial Identification Study", category: "research", description: "Identification and classification of bacterial strains using biochemical tests and microscopic examination for a university research project.", thumbnail: "https://images.unsplash.com/photo-1579165466741-7f35a4755657?w=1200&q=80", images: [], tools: ["Staining Techniques","Microscopy","Documentation"], link: "", date: "2023", featured: false },
+        { id: "4", title: "Lab Documentation System", category: "qc", description: "Developed a systematic documentation protocol for laboratory experiments and quality control procedures to ensure reproducibility and accuracy.", thumbnail: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200&q=80", images: [], tools: ["Documentation","Data Entry","Analysis"], link: "", date: "2023", featured: false }
+      ],
+      experience: [
+        { id: "1", company: "Research Lab - Suez University", role: "Research Assistant", period: "2023 - Present", description: "Assisting in biology research projects, conducting cell culture experiments, and performing quality control analysis on laboratory samples.", current: true },
+        { id: "2", company: "University Laboratory", role: "Lab Technician Trainee", period: "2022 - 2023", description: "Trained in laboratory procedures, sample preparation, microscopy techniques, and maintaining lab equipment and safety standards.", current: false }
+      ],
+      education: [
+        { id: "1", institution: "Suez University - Faculty of Science", degree: "Bachelor's Degree", field: "Biology", year: "2024", description: "Studied general biology, cell biology, microbiology, genetics, and laboratory techniques. Graduated with research focus on cellular analysis and quality control." }
+      ],
+      skills: [
+        { id: "1", name: "Microscopy", category: "technical", level: 90 },
+        { id: "2", name: "Cell Culture", category: "technical", level: 85 },
+        { id: "3", name: "Quality Control", category: "technical", level: 88 },
+        { id: "4", name: "Lab Documentation", category: "technical", level: 82 },
+        { id: "5", name: "Data Analysis", category: "technical", level: 80 },
+        { id: "6", name: "Staining Techniques", category: "technical", level: 85 },
+        { id: "7", name: "Sample Preparation", category: "technical", level: 87 },
+        { id: "8", name: "Microsoft Excel", category: "tool", level: 85 },
+        { id: "9", name: "SPSS", category: "tool", level: 70 },
+        { id: "10", name: "Lab Equipment", category: "tool", level: 90 },
+        { id: "11", name: "Attention to Detail", category: "soft", level: 95 },
+        { id: "12", name: "Scientific Writing", category: "soft", level: 80 }
+      ],
+      stats: {
+        years: "2+",
+        projects: "15+",
+        samples: "200+",
+        coffee: "∞"
+      },
+      settings: {
+        theme: { primary: "#d4789a", accent: "#e8a4bf", dark: "#1a1218", light: "#f0f0f0" },
+        site: { metaTitle: "SMS | Biology Researcher & QC Analyst", metaDescription: "Portfolio of SMS - Biology Researcher and Quality Control Analyst" }
+      }
+    };
+
+    // Firebase Configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAjiQh7Z9Rv752QqgtvhnkLcuol6r3F29Q",
+      authDomain: "zizd-11eff.firebaseapp.com",
+      projectId: "zizd-11eff",
+      storageBucket: "zizd-11eff.firebasestorage.app",
+      messagingSenderId: "422745837260",
+      appId: "1:422745837260:web:3d77e6c83c2b6c4c387c69"
+    };
+
+    let firebaseApp = null;
+    let db = null;
+    let firebaseReady = false;
+
+    const Storage = {
+      get: () => { try { const d = localStorage.getItem('biology_portfolio_data'); return d ? JSON.parse(d) : defaultData; } catch(e) { return defaultData; } },
+      set: (data) => { try { localStorage.setItem('biology_portfolio_data', JSON.stringify(data)); return true; } catch(e) { return false; } },
+      export: () => { const data = Storage.get(); const blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'}); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'biology-portfolio-backup.json'; a.click(); URL.revokeObjectURL(url); },
+      import: (file) => new Promise((resolve,reject) => { const reader = new FileReader(); reader.onload = (e) => { try { const data = JSON.parse(e.target.result); Storage.set(data); resolve(data); } catch(err) { reject(err); } }; reader.readAsText(file); }),
+
+      initFirebase: () => {
+        if (firebaseReady) return true;
+        try {
+          firebaseApp = firebase.initializeApp(firebaseConfig);
+          db = firebase.firestore();
+          firebaseReady = true;
+          return true;
+        } catch(e) { return false; }
+      },
+
+      syncToCloud: async (data) => {
+        if (!Storage.initFirebase()) return false;
+        try {
+          await db.collection('portfolio').doc('biology-portfolio').set(data);
+          return true;
+        } catch(e) { return false; }
+      },
+
+      fetchFromCloud: async () => {
+        if (!Storage.initFirebase()) return null;
+        try {
+          const doc = await db.collection('portfolio').doc('biology-portfolio').get();
+          if (doc.exists) { Storage.set(doc.data()); return doc.data(); }
+          return null;
+        } catch(e) { return null; }
+      }
+    };
+
+    const DataContext = createContext();
+    function DataProvider({ children }) {
+      const [data, setData] = useState(Storage.get());
+      const [toast, setToast] = useState(null);
+      const [syncing, setSyncing] = useState(false);
+      const [cloudStatus, setCloudStatus] = useState('local');
+
+      useEffect(() => {
+        const load = async () => {
+          setSyncing(true);
+          const cloudData = await Storage.fetchFromCloud();
+          if (cloudData) {
+            setData(cloudData);
+            setCloudStatus('connected');
+            showToast('Data loaded from cloud');
+          } else {
+            const localData = Storage.get();
+            if (localData !== defaultData) {
+              await Storage.syncToCloud(localData);
+            }
+            setCloudStatus('connected');
+          }
+          setSyncing(false);
+        };
+        load();
+      }, []);
+
+      const updateData = async (newData) => { 
+        setData(newData); 
+        Storage.set(newData); 
+        setSyncing(true);
+        const ok = await Storage.syncToCloud(newData);
+        setSyncing(false);
+        if (ok) {
+          setCloudStatus('connected');
+          showToast('Saved & synced to cloud!');
+        } else {
+          setCloudStatus('error');
+          showToast('Saved locally (cloud sync failed)');
+        }
+      };
+
+      const updateSection = (section, value) => updateData({ ...data, [section]: value });
+      const showToast = (message) => { setToast(message); setTimeout(() => setToast(null), 3000); };
+
+      const manualSync = async () => {
+        setSyncing(true);
+        const ok = await Storage.syncToCloud(data);
+        setSyncing(false);
+        if (ok) {
+          setCloudStatus('connected');
+          showToast('Synced to cloud!');
+        } else {
+          setCloudStatus('error');
+          showToast('Sync failed');
+        }
+      };
+
+      return (
+        <DataContext.Provider value={{ data, updateData, updateSection, showToast, syncing, cloudStatus, manualSync }}>
+          {children}
+          <div className={`toast ${toast ? 'show' : ''}`}>
+            <div className="flex items-center gap-2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              {toast}
+              {syncing && <span className="ml-2 text-xs animate-pulse">Syncing...</span>}
+            </div>
+          </div>
+        </DataContext.Provider>
+      );
+    }
+    function useData() { return useContext(DataContext); }
+
+    function useHashRouter() {
+      const [path, setPath] = useState(window.location.hash.slice(1) || '/');
+      useEffect(() => { const h = () => setPath(window.location.hash.slice(1) || '/'); window.addEventListener('hashchange', h); return () => window.removeEventListener('hashchange', h); }, []);
+      const navigate = (to) => { window.location.hash = to; window.scrollTo(0,0); };
+      return { path, navigate };
+    }
+
+    function useScrollReveal() {
+      useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        return () => observer.disconnect();
+      }, []);
+    }
+
+    function Icon({ name, size=20, className="" }) {
+      const icons = {
+        home: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
+        briefcase: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>,
+        user: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>,
+        fileText: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>,
+        mail: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>,
+        menu: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>,
+        x: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>,
+        arrowRight: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
+        arrowLeft: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>,
+        arrowUpRight: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>,
+        externalLink: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>,
+        download: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>,
+        plus: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>,
+        trash: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>,
+        edit: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>,
+        settings: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.08 15a1.65 1.65 0 00-1.51-1H2a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.08 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.08a1.65 1.65 0 001-1.51V2a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>,
+        image: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>,
+        grid: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>,
+        layers: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>,
+        graduationCap: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 10l-10-5L2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
+        star: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
+        logOut: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>,
+        save: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>,
+        upload: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>,
+        layout: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>,
+        palette: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.01 17.461 2 12 2z"/></svg>,
+        globe: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>,
+        linkedin: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>,
+        github: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>,
+        twitter: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>,
+        phone: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>,
+        mapPin: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>,
+        calendar: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>,
+        check: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="20 6 9 17 4 12"/></svg>,
+        chevronRight: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="9 18 15 12 9 6"/></svg>,
+        copy: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>,
+        eye: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>,
+        lock: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>,
+        sparkles: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M12 3L14.5 8.5L20 11L14.5 13.5L12 19L9.5 13.5L4 11L9.5 8.5L12 3Z"/></svg>,
+        send: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>,
+        heart: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>,
+        zap: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
+        target: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>,
+        microscope: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 10-7-7"/><path d="M14 14a3 3 0 11-3-3"/><path d="M10 11l-3-3"/><path d="M7 8l-2-2"/></svg>,
+        dna: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="M9 22c1.5-5.5 6.5-5.5 8 0"/><path d="M15 2c-1.5 5.5-6.5 5.5-8 0"/><path d="M22 9c-6.667 6-13.333 0-20 6"/></svg>,
+        flask: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M10 2v7.31"/><path d="M14 2v7.31"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 11-4 0"/><path d="M5.52 16h12.96"/></svg>,
+        leaf: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M11 20A7 7 0 019.8 6.6C15.5 5.7 20 8.6 20 14c0 4.4-3.6 8-8 8z"/><path d="M12 22v-8"/><path d="M12 14c-2.5-2.5-2.5-6 0-8"/></svg>,
+        activity: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
+        search: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      };
+      return icons[name] || null;
+    }
+
+    function Navbar() {
+      const { path, navigate } = useHashRouter();
+      const [mobileOpen, setMobileOpen] = useState(false);
+      const [scrolled, setScrolled] = useState(false);
+
+      useEffect(() => {
+        const h = () => setScrolled(window.scrollY > 80);
+        window.addEventListener('scroll', h);
+        return () => window.removeEventListener('scroll', h);
+      }, []);
+
+      const links = [
+        { to: '/', label: 'Home' },
+        { to: '/work', label: 'Work' },
+        { to: '/about', label: 'About' },
+        { to: '/cv', label: 'CV' },
+        { to: '/contact', label: 'Contact' }
+      ];
+
+      return (
+        <>
+          <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-dark/90 backdrop-blur-xl border-b border-border/50' : 'bg-transparent'}`}>
+            <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+              <a href="#/" onClick={() => navigate('/')} className="text-2xl font-black tracking-tighter">
+                <span className="text-light">sms</span>
+                <span className="text-accent">.</span>
+              </a>
+
+              <div className="hidden md:flex items-center gap-10">
+                {links.map(l => (
+                  <a key={l.to} href={`#${l.to}`} onClick={() => navigate(l.to)} 
+                     className={`nav-link text-sm font-medium tracking-wide uppercase ${path === l.to ? 'active text-accent' : 'text-muted'}`}>
+                    {l.label}
+                  </a>
+                ))}
+                <a href="#/admin" onClick={() => navigate('/admin')} 
+                   className="text-xs text-muted hover:text-accent transition-colors border border-border/60 rounded-full px-4 py-2 uppercase tracking-wider">
+                  Admin
+                </a>
+              </div>
+
+              <button onClick={() => setMobileOpen(true)} className="md:hidden text-light p-2">
+                <Icon name="menu" size={24} />
+              </button>
+            </div>
+          </nav>
+
+          <div className={`fixed inset-0 z-[60] bg-dark/98 backdrop-blur-2xl mobile-menu ${mobileOpen ? 'open' : ''}`}>
+            <div className="flex flex-col h-full p-8">
+              <div className="flex justify-between items-center mb-16">
+                <span className="text-2xl font-black">sms<span className="text-accent">.</span></span>
+                <button onClick={() => setMobileOpen(false)} className="p-2"><Icon name="x" size={28} /></button>
+              </div>
+              <div className="flex flex-col gap-8">
+                {links.map((l, i) => (
+                  <a key={l.to} href={`#${l.to}`} onClick={() => { navigate(l.to); setMobileOpen(false); }}
+                     className="text-4xl font-bold text-light hover:text-accent transition-colors" style={{animationDelay: `${i*0.1}s`}}>
+                    {l.label}
+                  </a>
+                ))}
+              </div>
+              <div className="mt-auto pt-8 border-t border-border">
+                <a href="#/admin" onClick={() => { navigate('/admin'); setMobileOpen(false); }}
+                   className="text-muted hover:text-accent transition-colors">Admin Panel</a>
+              </div>
+            </div>
+          </div>
+        </>
+      );
+    }
+
+    function Footer() {
+      const { data } = useData();
+      const { navigate } = useHashRouter();
+      return (
+        <footer className="border-t border-border bg-darker">
+          <div className="max-w-7xl mx-auto px-6 py-16">
+            <div className="grid md:grid-cols-4 gap-12 mb-16">
+              <div className="md:col-span-2">
+                <h3 className="text-3xl font-black mb-4">sms<span className="text-primary">.</span></h3>
+                <p className="text-muted max-w-sm leading-relaxed">{data.profile.title} based in {data.profile.location}. Exploring life at the cellular level with curiosity and precision.</p>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold mb-6 text-light uppercase tracking-wider">Navigation</h4>
+                <div className="flex flex-col gap-3">
+                  {['Home','Work','About','CV','Contact'].map(l => (
+                    <a key={l} href={`#/${l.toLowerCase()}`} onClick={() => navigate(`/${l.toLowerCase()}`)} 
+                       className="text-muted hover:text-accent transition-colors text-sm">{l}</a>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold mb-6 text-light uppercase tracking-wider">Connect</h4>
+                <div className="flex gap-4">
+                  {data.profile.social.linkedin && <a href={data.profile.social.linkedin} target="_blank" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-all"><Icon name="linkedin" size={18} /></a>}
+                  {data.profile.social.researchgate && <a href={data.profile.social.researchgate} target="_blank" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-all"><Icon name="search" size={18} /></a>}
+                  {data.profile.social.github && <a href={data.profile.social.github} target="_blank" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-all"><Icon name="github" size={18} /></a>}
+                  {data.profile.social.twitter && <a href={data.profile.social.twitter} target="_blank" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-all"><Icon name="twitter" size={18} /></a>}
+                </div>
+              </div>
+            </div>
+            <div className="section-divider mb-8" />
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-muted text-xs">
+              <span>&copy; {new Date().getFullYear()} {data.profile.name}. All rights reserved.</span>
+              <span>Exploring life, one cell at a time</span>
+            </div>
+          </div>
+        </footer>
+      );
+    }
+
+    function Home() {
+      const { data } = useData();
+      const { navigate } = useHashRouter();
+      useScrollReveal();
+
+      return (
+        <div>
+          {/* HERO - With wavy circle and floating bio icons */}
+          <section className="min-h-screen flex items-center relative overflow-hidden pt-20">
+            <div className="absolute inset-0">
+              <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[150px] animate-float" />
+              <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px] animate-float" style={{animationDelay: '-3s'}} />
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-accent text-xs font-medium tracking-wider uppercase mb-8 animate-fade-up">
+                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    Open for Research
+                  </div>
+
+                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-8">
+                    <span className="block text-light animate-fade-up" style={{animationDelay: '0.1s'}}>Exploring</span>
+                    <span className="block text-gradient animate-fade-up" style={{animationDelay: '0.2s'}}>Life at the</span>
+                    <span className="block text-light animate-fade-up" style={{animationDelay: '0.3s'}}>Cellular Level</span>
+                  </h1>
+
+                  <p className="text-lg md:text-xl text-muted max-w-lg mb-10 leading-relaxed animate-fade-up" style={{animationDelay: '0.4s'}}>
+                    {data.profile.bioEn}
+                  </p>
+
+                  <div className="flex flex-wrap gap-4 animate-fade-up" style={{animationDelay: '0.5s'}}>
+                    <button onClick={() => navigate('/work')} className="magnetic-btn px-8 py-4 rounded-full bg-primary text-dark font-bold text-sm tracking-wide flex items-center gap-2">
+                      View Research <Icon name="arrowRight" size={16} />
+                    </button>
+                    <button onClick={() => navigate('/contact')} className="magnetic-btn px-8 py-4 rounded-full border border-border text-light font-medium text-sm tracking-wide hover:border-primary hover:text-accent transition-all flex items-center gap-2">
+                      Contact Me <Icon name="mail" size={16} />
+                    </button>
+                  </div>
+                </div>
+
+                <div className="hidden lg:flex justify-center items-center animate-scale-in" style={{animationDelay: '0.3s'}}>
+                  <div className="relative">
+                    {/* Wavy Circle */}
+                    <div className="wavy-circle">
+                      <div className="wavy-ring" />
+                      <div className="avatar-inner">
+                        {data.profile.avatar ? (
+                          <img src={data.profile.avatar} alt={data.profile.name} className="w-full h-full object-cover" />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center">
+                            <div className="text-center">
+                              <Icon name="microscope" size={64} className="text-muted/30 mx-auto mb-2" />
+                              <p className="text-muted/40 text-xs">Your Photo</p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Floating Bio Icons */}
+                    <div className="absolute -top-6 -right-6 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center animate-float-slow">
+                      <Icon name="dna" size={28} className="text-primary" />
+                    </div>
+                    <div className="absolute -bottom-4 -left-8 w-14 h-14 rounded-full bg-surface border border-border flex items-center justify-center animate-float" style={{animationDelay: '-2s'}}>
+                      <Icon name="flask" size={20} className="text-accent" />
+                    </div>
+                    <div className="absolute top-1/2 -right-12 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center animate-float-slow" style={{animationDelay: '-4s'}}>
+                      <Icon name="leaf" size={18} className="text-mint" />
+                    </div>
+                    <div className="absolute -top-2 -left-4 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center animate-float" style={{animationDelay: '-1s'}}>
+                      <Icon name="activity" size={16} className="text-gold" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted">
+              <span className="text-xs uppercase tracking-widest">Scroll</span>
+              <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent" />
+            </div>
+          </section>
+
+          {/* MARQUEE */}
+          <section className="py-8 border-y border-border overflow-hidden bg-surface/30">
+            <div className="flex animate-marquee whitespace-nowrap">
+              {[...Array(2)].map((_, i) => (
+                <div key={i} className="flex items-center gap-12 px-6">
+                  {['Research', 'Cell Biology', 'Quality Control', 'Lab Analysis', 'Microscopy', 'Data', 'Life Sciences'].map((t, j) => (
+                    <span key={j} className="text-4xl md:text-6xl font-black text-muted/10 uppercase tracking-tight font-display">{t}</span>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* SERVICES */}
+          <section className="py-24 md:py-32">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="reveal mb-16">
+                <span className="text-primary text-sm font-medium tracking-wider uppercase">What I Do</span>
+                <h2 className="text-4xl md:text-6xl font-black mt-3 tracking-tight font-display">Services</h2>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  { icon: 'microscope', title: 'Microscopy', desc: 'Advanced microscopic analysis of cellular structures, tissue samples, and microorganisms with detailed documentation.' },
+                  { icon: 'flask', title: 'Lab Analysis', desc: 'Comprehensive laboratory testing and analysis following strict protocols and safety standards.' },
+                  { icon: 'activity', title: 'Quality Control', desc: 'Rigorous quality control procedures to ensure accuracy, reliability, and reproducibility of results.' },
+                  { icon: 'fileText', title: 'Research Documentation', desc: 'Detailed scientific documentation, data recording, and research reporting for academic and professional use.' }
+                ].map((s, i) => (
+                  <div key={i} className={`glass-card rounded-2xl p-8 md:p-10 reveal reveal-delay-${i+1}`}>
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-8">
+                      <Icon name={s.icon} size={28} className="text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">{s.title}</h3>
+                    <p className="text-muted leading-relaxed text-sm">{s.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* STATS - Editable from admin */}
+          <section className="py-24 border-y border-border">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {[
+                  { num: data.stats?.years || '2+', label: 'Years Experience' },
+                  { num: data.stats?.projects || '15+', label: 'Projects Done' },
+                  { num: data.stats?.samples || '200+', label: 'Samples Analyzed' },
+                  { num: data.stats?.coffee || '∞', label: 'Coffee Cups' }
+                ].map((s, i) => (
+                  <div key={i} className="text-center reveal">
+                    <div className="big-number mb-2">{s.num}</div>
+                    <div className="text-muted text-sm uppercase tracking-wider">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* FEATURED WORK - Horizontal Scroll */}
+          <section className="py-24 md:py-32 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-6 mb-12">
+              <div className="flex flex-col md:flex-row md:items-end justify-between reveal">
+                <div>
+                  <span className="text-primary text-sm font-medium tracking-wider uppercase">Portfolio</span>
+                  <h2 className="text-4xl md:text-6xl font-black mt-3 tracking-tight font-display">Featured<br />Research</h2>
+                </div>
+                <button onClick={() => navigate('/work')} className="mt-6 md:mt-0 flex items-center gap-2 text-accent hover:text-primary transition-colors text-sm font-medium uppercase tracking-wider">
+                  View All Projects <Icon name="arrowRight" size={16} />
+                </button>
+              </div>
+            </div>
+
+            <div className="horizontal-scroll px-6 pb-4">
+              {data.projects.filter(p => p.featured).map((p, i) => (
+                <div key={p.id} 
+                     className="project-card rounded-2xl cursor-pointer group shrink-0 w-[85vw] md:w-[60vw] lg:w-[45vw] reveal" 
+                     style={{transitionDelay: `${i*0.15}s`}} 
+                     onClick={() => navigate(`/project/${p.id}`)}>
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img src={p.thumbnail} alt={p.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 z-10 project-info">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="tag">{p.category}</span>
+                      <span className="text-muted text-sm">{p.date}</span>
+                    </div>
+                    <h3 className="text-2xl md:text-4xl font-black mb-3 font-display">{p.title}</h3>
+                    <p className="text-muted/80 text-sm max-w-lg">{p.description}</p>
+                    <div className="flex items-center gap-2 mt-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="text-sm font-medium">View Project</span>
+                      <Icon name="arrowUpRight" size={16} />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 mt-6 flex items-center gap-3 text-muted/50 reveal">
+              <div className="w-8 h-px bg-muted/30" />
+              <span className="text-xs uppercase tracking-widest">Scroll to explore</span>
+              <Icon name="arrowRight" size={12} />
+            </div>
+          </section>
+
+          {/* PROCESS */}
+          <section className="py-24 md:py-32 bg-surface/30">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="text-center mb-20 reveal">
+                <span className="text-primary text-sm font-medium tracking-wider uppercase">How I Work</span>
+                <h2 className="text-4xl md:text-6xl font-black mt-3 tracking-tight font-display">My Process</h2>
+              </div>
+              <div className="grid md:grid-cols-4 gap-8">
+                {[
+                  { step: '01', title: 'Sample', desc: 'Careful collection and preparation of samples following strict laboratory protocols and safety standards.' },
+                  { step: '02', title: 'Observe', desc: 'Detailed microscopic observation and documentation of cellular structures, behaviors, and characteristics.' },
+                  { step: '03', title: 'Analyze', desc: 'Systematic data analysis using scientific methods to draw accurate conclusions and identify patterns.' },
+                  { step: '04', title: 'Report', desc: 'Comprehensive documentation and reporting of findings with clear, evidence-based conclusions.' }
+                ].map((s, i) => (
+                  <div key={i} className="relative reveal" style={{transitionDelay: `${i*0.1}s`}}>
+                    <div className="text-6xl font-black text-muted/5 mb-4">{s.step}</div>
+                    <h3 className="text-xl font-bold mb-3">{s.title}</h3>
+                    <p className="text-muted text-sm leading-relaxed">{s.desc}</p>
+                    {i < 3 && <div className="hidden md:block absolute top-8 right-0 w-full h-px bg-gradient-to-r from-border to-transparent" />}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* WHY WORK WITH ME */}
+          <section className="py-24">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="text-center mb-16 reveal">
+                <span className="text-primary text-sm font-medium tracking-wider uppercase">Trust</span>
+                <h2 className="text-4xl md:text-5xl font-black mt-3 tracking-tight font-display">Why Work With Me?</h2>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  { icon: 'target', title: 'Precision', desc: 'Every analysis is conducted with meticulous attention to detail, ensuring accurate and reproducible results every time.' },
+                  { icon: 'search', title: 'Curiosity', desc: 'Driven by an insatiable curiosity about the natural world, always seeking to understand the how and why behind every observation.' },
+                  { icon: 'activity', title: 'Attention to Detail', desc: 'Nothing escapes notice. From sample preparation to final reporting, every step is executed with care and thoroughness.' }
+                ].map((t, i) => (
+                  <div key={i} className="glass-card rounded-2xl p-8 text-center reveal" style={{transitionDelay: `${i*0.1}s`}}>
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                      <Icon name={t.icon} size={24} className="text-primary" />
+                    </div>
+                    <h3 className="text-lg font-bold mb-3">{t.title}</h3>
+                    <p className="text-muted text-sm leading-relaxed">{t.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* CTA */}
+          <section className="py-24 md:py-32">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="glass-card rounded-3xl p-12 md:p-20 text-center relative overflow-hidden reveal">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full blur-[80px]" />
+                <div className="relative z-10">
+                  <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight font-display">
+                    Let's Explore<br /><span className="text-gradient">Together</span>
+                  </h2>
+                  <p className="text-muted text-lg max-w-lg mx-auto mb-10">Have a research project or collaboration in mind? I'm always open to discussing new opportunities in the field of biology.</p>
+                  <button onClick={() => navigate('/contact')} className="magnetic-btn px-10 py-5 rounded-full bg-primary text-dark font-bold text-sm tracking-wide uppercase">
+                    Start a Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      );
+    }
+
+    function Work() {
+      const { data } = useData();
+      const { navigate } = useHashRouter();
+      const [filter, setFilter] = useState('all');
+      const filtered = filter === 'all' ? data.projects : data.projects.filter(p => p.category === filter);
+      useScrollReveal();
+
+      return (
+        <div className="pt-24 pb-24">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16 reveal">
+              <span className="text-primary text-sm font-medium tracking-wider uppercase">Portfolio</span>
+              <h1 className="text-5xl md:text-7xl font-black mt-3 mb-6 tracking-tight font-display">Selected<br />Research</h1>
+              <p className="text-muted max-w-xl mx-auto text-lg">A collection of research projects and quality control analyses conducted with scientific rigor and attention to detail.</p>
+            </div>
+
+            <div className="flex justify-center gap-3 mb-16 reveal">
+              {[{k:'all',l:'All Projects'},{k:'research',l:'Research'},{k:'qc',l:'QC & Analysis'}].map(t => (
+                <button key={t.k} onClick={() => setFilter(t.k)}
+                        className={`px-6 py-3 rounded-full text-sm font-medium tracking-wide transition-all ${filter === t.k ? 'bg-primary text-dark' : 'border border-border text-muted hover:border-primary hover:text-accent'}`}>
+                  {t.l}
+                </button>
+              ))}
+            </div>
+
+            <div className="space-y-8">
+              {filtered.map((p, i) => (
+                <div key={p.id} className="project-card rounded-2xl cursor-pointer group reveal" style={{transitionDelay: `${i*0.1}s`}} onClick={() => navigate(`/project/${p.id}`)}>
+                  <div className="aspect-[21/9] md:aspect-[21/8] overflow-hidden">
+                    <img src={p.thumbnail} alt={p.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-10 project-info">
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                      <div>
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="tag">{p.category}</span>
+                          <span className="text-muted text-sm">{p.date}</span>
+                        </div>
+                        <h3 className="text-3xl md:text-4xl font-black mb-2 font-display">{p.title}</h3>
+                        <p className="text-muted/80 max-w-xl">{p.description}</p>
+                      </div>
+                      <div className="flex items-center gap-2 text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="text-sm font-medium">View Project</span>
+                        <Icon name="arrowUpRight" size={18} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {filtered.length === 0 && (
+              <div className="text-center py-24 reveal">
+                <p className="text-muted text-lg">No projects in this category yet.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    function ProjectDetail({ id }) {
+      const { data } = useData();
+      const { navigate } = useHashRouter();
+      const project = data.projects.find(p => p.id === id);
+
+      if (!project) return <div className="pt-32 text-center"><p className="text-muted">Project not found</p></div>;
+
+      return (
+        <div className="pt-24 pb-24">
+          <div className="max-w-6xl mx-auto px-6">
+            <button onClick={() => navigate('/work')} className="flex items-center gap-2 text-muted hover:text-accent mb-12 transition-colors text-sm uppercase tracking-wider">
+              <Icon name="arrowLeft" size={16} /> Back to Work
+            </button>
+
+            <div className="mb-12">
+              <span className="tag mb-4 inline-flex">{project.category}</span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mt-4 mb-6 tracking-tight font-display">{project.title}</h1>
+              <div className="flex flex-wrap items-center gap-6 text-muted text-sm">
+                <span className="flex items-center gap-2"><Icon name="calendar" size={14} /> {project.date}</span>
+                {project.link && <a href={project.link} target="_blank" className="flex items-center gap-2 text-accent hover:underline"><Icon name="externalLink" size={14} /> View Details</a>}
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden mb-16 border border-border">
+              <img src={project.thumbnail} alt={project.title} className="w-full aspect-[21/9] object-cover" />
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-12">
+              <div className="md:col-span-2">
+                <h3 className="text-2xl font-bold mb-6">About the Project</h3>
+                <p className="text-muted leading-relaxed text-lg whitespace-pre-line">{project.description}</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold mb-6">Tools & Techniques</h3>
+                <div className="flex flex-wrap gap-2">
+                  {project.tools.map(t => <span key={t} className="px-4 py-2 rounded-lg bg-surface border border-border text-sm">{t}</span>)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function About() {
+      const { data } = useData();
+      const { navigate } = useHashRouter();
+      useScrollReveal();
+
+      return (
+        <div className="pt-24 pb-24">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-20 reveal">
+              <span className="text-primary text-sm font-medium tracking-wider uppercase">About Me</span>
+              <h1 className="text-5xl md:text-7xl font-black mt-3 tracking-tight font-display">The Person Behind<br /><span className="text-gradient">The Microscope</span></h1>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+              <div className="reveal">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-surface relative">
+                  {data.profile.avatar ? (
+                    <img src={data.profile.avatar} alt={data.profile.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="text-center">
+                        <Icon name="microscope" size={80} className="text-muted/20 mx-auto mb-4" />
+                        <p className="text-muted/40 text-sm">Add your photo in Admin</p>
+                      </div>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent pointer-events-none" />
+                </div>
+              </div>
+
+              <div className="reveal">
+                <h2 className="text-4xl font-black mb-2">{data.profile.name}</h2>
+                <p className="text-primary text-lg font-medium mb-8">{data.profile.title}</p>
+
+                <div className="space-y-4 mb-8">
+                  {data.profile.location && (
+                    <div className="flex items-center gap-3 text-muted">
+                      <Icon name="mapPin" size={18} className="text-primary" />
+                      <span>{data.profile.location}</span>
+                    </div>
+                  )}
+                  {data.profile.email && (
+                    <div className="flex items-center gap-3 text-muted">
+                      <Icon name="mail" size={18} className="text-primary" />
+                      <a href={`mailto:${data.profile.email}`} className="hover:text-accent transition-colors">{data.profile.email}</a>
+                    </div>
+                  )}
+                  {data.profile.phone && (
+                    <div className="flex items-center gap-3 text-muted">
+                      <Icon name="phone" size={18} className="text-primary" />
+                      <span>{data.profile.phone}</span>
+                    </div>
+                  )}
+                </div>
+
+                <div className="flex gap-3 mb-10">
+                  {data.profile.social.linkedin && <a href={data.profile.social.linkedin} target="_blank" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-all"><Icon name="linkedin" size={20} /></a>}
+                  {data.profile.social.researchgate && <a href={data.profile.social.researchgate} target="_blank" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-all"><Icon name="search" size={20} /></a>}
+                  {data.profile.social.github && <a href={data.profile.social.github} target="_blank" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-all"><Icon name="github" size={20} /></a>}
+                  {data.profile.social.twitter && <a href={data.profile.social.twitter} target="_blank" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-all"><Icon name="twitter" size={20} /></a>}
+                </div>
+
+                <button onClick={() => navigate('/cv')} className="magnetic-btn px-8 py-4 rounded-full bg-primary text-dark font-bold text-sm tracking-wide flex items-center gap-2">
+                  View Full CV <Icon name="fileText" size={18} />
+                </button>
+              </div>
+            </div>
+
+            <div className="glass-card rounded-2xl p-8 md:p-12 mb-20 reveal">
+              <h3 className="text-2xl font-bold mb-8">My Story</h3>
+              <div className="grid md:grid-cols-2 gap-10">
+                <div>
+                  <span className="text-xs text-primary uppercase tracking-wider font-medium mb-3 block">Arabic</span>
+                  <p className="text-muted leading-relaxed text-lg" style={{ direction: 'rtl', textAlign: 'right' }}>
+                    {data.profile.bioAr}
+                  </p>
+                </div>
+                <div>
+                  <span className="text-xs text-primary uppercase tracking-wider font-medium mb-3 block">English</span>
+                  <p className="text-muted leading-relaxed text-lg">
+                    {data.profile.bioEn}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="reveal">
+              <h3 className="text-2xl font-bold mb-8">Core Skills</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {data.skills.filter(s => s.category === 'technical').slice(0, 6).map(skill => (
+                  <div key={skill.id}>
+                    <div className="flex justify-between mb-2">
+                      <span className="font-medium">{skill.name}</span>
+                      <span className="text-muted text-sm font-mono">{skill.level}%</span>
+                    </div>
+                    <div className="skill-bar"><div className="skill-bar-fill" style={{width: `${skill.level}%`}} /></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function CV() {
+      const { data } = useData();
+      const [copied, setCopied] = useState(false);
+      useScrollReveal();
+
+      const copyToClipboard = (text) => {
+        navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      };
+
+      const technicalSkills = data.skills.filter(s => s.category === 'technical');
+      const toolSkills = data.skills.filter(s => s.category === 'tool');
+      const softSkills = data.skills.filter(s => s.category === 'soft');
+
+      return (
+        <div className="pt-24 pb-24">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-16 reveal">
+              <div>
+                <span className="text-primary text-sm font-medium tracking-wider uppercase">Resume</span>
+                <h1 className="text-5xl md:text-6xl font-black mt-3 tracking-tight font-display">Curriculum<br />Vitae</h1>
+              </div>
+              <button onClick={() => window.print()} className="magnetic-btn px-6 py-3 rounded-full border border-border text-muted hover:border-primary hover:text-accent transition-all text-sm font-medium flex items-center gap-2">
+                <Icon name="download" size={16} /> Print / Save PDF
+              </button>
+            </div>
+
+            <div className="glass-card rounded-3xl p-8 md:p-12 mb-8" id="cv-content">
+              <div className="border-b border-border pb-10 mb-10 reveal">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+                  <div>
+                    <h2 className="text-4xl font-black">{data.profile.name}</h2>
+                    <p className="text-primary text-xl font-medium mt-2">{data.profile.title}</p>
+                    <p className="text-muted mt-3 flex items-center gap-2">
+                      <Icon name="mapPin" size={14} /> {data.profile.location}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-2 text-sm text-muted">
+                    {data.profile.email && (
+                      <button onClick={() => copyToClipboard(data.profile.email)} className="flex items-center gap-2 hover:text-accent transition-colors text-left">
+                        <Icon name="mail" size={14} /> {data.profile.email}
+                        <Icon name={copied ? "check" : "copy"} size={12} className="text-primary" />
+                      </button>
+                    )}
+                    {data.profile.phone && <span className="flex items-center gap-2"><Icon name="phone" size={14} /> {data.profile.phone}</span>}
+                    {data.profile.website && <span className="flex items-center gap-2"><Icon name="globe" size={14} /> {data.profile.website}</span>}
+                  </div>
+                </div>
+                <p className="text-muted mt-8 leading-relaxed text-lg">{data.profile.bioEn}</p>
+              </div>
+
+              <div className="mb-12 reveal">
+                <h3 className="text-2xl font-black mb-8 flex items-center gap-3">
+                  <Icon name="briefcase" size={24} className="text-primary" /> Experience
+                </h3>
+                <div className="space-y-8">
+                  {data.experience.map(exp => (
+                    <div key={exp.id} className="relative pl-8">
+                      <div className="timeline-dot absolute left-0 top-1" />
+                      <div className="timeline-line" />
+                      <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h4 className="text-xl font-bold">{exp.role}</h4>
+                        <span className="text-sm text-primary font-medium">{exp.period}</span>
+                      </div>
+                      <p className="text-muted font-medium mb-2">{exp.company} {exp.current && <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary ml-2">Current</span>}</p>
+                      <p className="text-muted text-sm leading-relaxed">{exp.description}</p>
+                    </div>
+                  ))}
+                  {data.experience.length === 0 && <p className="text-muted text-sm">No experience entries yet. Add them in Admin.</p>}
+                </div>
+              </div>
+
+              <div className="mb-12 reveal">
+                <h3 className="text-2xl font-black mb-8 flex items-center gap-3">
+                  <Icon name="graduationCap" size={24} className="text-primary" /> Education
+                </h3>
+                <div className="space-y-8">
+                  {data.education.map(edu => (
+                    <div key={edu.id} className="relative pl-8">
+                      <div className="timeline-dot absolute left-0 top-1" />
+                      <div className="timeline-line" />
+                      <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h4 className="text-xl font-bold">{edu.degree} in {edu.field}</h4>
+                        <span className="text-sm text-primary font-medium">{edu.year}</span>
+                      </div>
+                      <p className="text-muted font-medium mb-2">{edu.institution}</p>
+                      <p className="text-muted text-sm leading-relaxed">{edu.description}</p>
+                    </div>
+                  ))}
+                  {data.education.length === 0 && <p className="text-muted text-sm">No education entries yet. Add them in Admin.</p>}
+                </div>
+              </div>
+
+              <div className="mb-12 reveal">
+                <h3 className="text-2xl font-black mb-8 flex items-center gap-3">
+                  <Icon name="star" size={24} className="text-primary" /> Skills
+                </h3>
+
+                {technicalSkills.length > 0 && (
+                  <div className="mb-8">
+                    <h4 className="text-sm font-bold text-muted uppercase tracking-wider mb-6">Technical</h4>
+                    <div className="grid md:grid-cols-2 gap-5">
+                      {technicalSkills.map(skill => (
+                        <div key={skill.id}>
+                          <div className="flex justify-between mb-2">
+                            <span className="font-medium">{skill.name}</span>
+                            <span className="text-sm text-muted font-mono">{skill.level}%</span>
+                          </div>
+                          <div className="skill-bar"><div className="skill-bar-fill" style={{width: `${skill.level}%`}} /></div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {toolSkills.length > 0 && (
+                  <div className="mb-8">
+                    <h4 className="text-sm font-bold text-muted uppercase tracking-wider mb-6">Tools</h4>
+                    <div className="grid md:grid-cols-2 gap-5">
+                      {toolSkills.map(skill => (
+                        <div key={skill.id}>
+                          <div className="flex justify-between mb-2">
+                            <span className="font-medium">{skill.name}</span>
+                            <span className="text-sm text-muted font-mono">{skill.level}%</span>
+                          </div>
+                          <div className="skill-bar"><div className="skill-bar-fill" style={{width: `${skill.level}%`}} /></div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {softSkills.length > 0 && (
+                  <div>
+                    <h4 className="text-sm font-bold text-muted uppercase tracking-wider mb-6">Soft Skills</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {softSkills.map(skill => (
+                        <span key={skill.id} className="px-4 py-2 rounded-full bg-surface border border-border text-sm">{skill.name}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {data.skills.length === 0 && <p className="text-muted text-sm">No skills added yet. Add them in Admin.</p>}
+              </div>
+
+              <div className="reveal">
+                <h3 className="text-2xl font-black mb-8 flex items-center gap-3">
+                  <Icon name="grid" size={24} className="text-primary" /> Selected Projects
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {data.projects.slice(0, 4).map(p => (
+                    <div key={p.id} className="flex gap-4 p-4 rounded-xl bg-surface/50 border border-border">
+                      <img src={p.thumbnail} alt={p.title} className="w-20 h-20 rounded-lg object-cover" />
+                      <div>
+                        <h4 className="font-bold text-sm">{p.title}</h4>
+                        <p className="text-xs text-muted mt-1">{p.category}</p>
+                        <p className="text-xs text-muted mt-1">{p.tools.join(', ')}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {data.projects.length === 0 && <p className="text-muted text-sm">No projects added yet. Add them in Admin.</p>}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function Contact() {
+      const { data } = useData();
+      const [form, setForm] = useState({ name: '', email: '', message: '' });
+      const [sent, setSent] = useState(false);
+      useScrollReveal();
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        setSent(true);
+        setTimeout(() => setSent(false), 3000);
+        setForm({ name: '', email: '', message: '' });
+      };
+
+      return (
+        <div className="pt-24 pb-24">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-20 reveal">
+              <span className="text-primary text-sm font-medium tracking-wider uppercase">Contact</span>
+              <h1 className="text-5xl md:text-7xl font-black mt-3 mb-6 tracking-tight font-display">Let's<br />Collaborate</h1>
+              <p className="text-muted max-w-xl mx-auto text-lg">Have a research idea or collaboration in mind? I'd love to hear from you.</p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-16">
+              <div className="reveal">
+                <h3 className="text-2xl font-bold mb-10">Get in Touch</h3>
+                <div className="space-y-6 mb-12">
+                  {data.profile.email && (
+                    <div className="flex items-center gap-5 p-6 rounded-2xl bg-surface/50 border border-border hover:border-primary/30 transition-all group">
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <Icon name="mail" size={24} className="text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted uppercase tracking-wider mb-1">Email</p>
+                        <a href={`mailto:${data.profile.email}`} className="font-medium hover:text-accent transition-colors">{data.profile.email}</a>
+                      </div>
+                    </div>
+                  )}
+                  {data.profile.phone && (
+                    <div className="flex items-center gap-5 p-6 rounded-2xl bg-surface/50 border border-border hover:border-primary/30 transition-all group">
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <Icon name="phone" size={24} className="text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted uppercase tracking-wider mb-1">Phone</p>
+                        <a href={`tel:${data.profile.phone}`} className="font-medium hover:text-accent transition-colors">{data.profile.phone}</a>
+                      </div>
+                    </div>
+                  )}
+                  <div className="flex items-center gap-5 p-6 rounded-2xl bg-surface/50 border border-border hover:border-primary/30 transition-all group">
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Icon name="mapPin" size={24} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted uppercase tracking-wider mb-1">Location</p>
+                      <p className="font-medium">{data.profile.location}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <h4 className="text-lg font-bold mb-6">Follow Me</h4>
+                <div className="flex gap-4">
+                  {data.profile.social.linkedin && <a href={data.profile.social.linkedin} target="_blank" className="w-14 h-14 rounded-full bg-surface border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-all"><Icon name="linkedin" size={22} /></a>}
+                  {data.profile.social.researchgate && <a href={data.profile.social.researchgate} target="_blank" className="w-14 h-14 rounded-full bg-surface border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-all"><Icon name="search" size={22} /></a>}
+                  {data.profile.social.github && <a href={data.profile.social.github} target="_blank" className="w-14 h-14 rounded-full bg-surface border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-all"><Icon name="github" size={22} /></a>}
+                  {data.profile.social.twitter && <a href={data.profile.social.twitter} target="_blank" className="w-14 h-14 rounded-full bg-surface border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-all"><Icon name="twitter" size={22} /></a>}
+                </div>
+              </div>
+
+              <div className="glass-card rounded-2xl p-8 md:p-10 reveal">
+                <h3 className="text-2xl font-bold mb-8">Send a Message</h3>
+                {sent ? (
+                  <div className="text-center py-16">
+                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                      <Icon name="check" size={40} className="text-primary" />
+                    </div>
+                    <h4 className="text-2xl font-bold mb-3">Message Sent!</h4>
+                    <p className="text-muted">Thank you for reaching out. I'll get back to you soon.</p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
+                      <label className="block text-sm text-muted mb-2">Name</label>
+                      <input type="text" required value={form.name} onChange={e => setForm({...form, name: e.target.value})} 
+                             className="input-field w-full px-5 py-4 rounded-xl" placeholder="Your name" />
+                    </div>
+                    <div>
+                      <label className="block text-sm text-muted mb-2">Email</label>
+                      <input type="email" required value={form.email} onChange={e => setForm({...form, email: e.target.value})} 
+                             className="input-field w-full px-5 py-4 rounded-xl" placeholder="your@email.com" />
+                    </div>
+                    <div>
+                      <label className="block text-sm text-muted mb-2">Message</label>
+                      <textarea required rows={5} value={form.message} onChange={e => setForm({...form, message: e.target.value})} 
+                                className="input-field w-full px-5 py-4 rounded-xl resize-none" placeholder="Tell me about your project..." />
+                    </div>
+                    <button type="submit" className="magnetic-btn w-full py-4 rounded-xl bg-primary text-dark font-bold text-sm tracking-wide flex items-center justify-center gap-2">
+                      <Icon name="send" size={18} /> Send Message
+                    </button>
+                  </form>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function AdminLogin({ onLogin }) {
+      const [pass, setPass] = useState('');
+      const [error, setError] = useState(false);
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        if (pass === 'admin123') {
+          localStorage.setItem('admin_auth', 'true');
+          onLogin();
+        } else {
+          setError(true);
+          setTimeout(() => setError(false), 2000);
+        }
+      };
+
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-darker">
+          <div className="glass-card rounded-2xl p-8 w-full max-w-md mx-4">
+            <div className="text-center mb-10">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Icon name="lock" size={28} className="text-primary" />
+              </div>
+              <h2 className="text-2xl font-black">Admin Panel</h2>
+              <p className="text-muted text-sm mt-2">Enter password to continue</p>
+            </div>
+            <form onSubmit={handleSubmit}>
+              <input type="password" value={pass} onChange={e => setPass(e.target.value)} 
+                     className="input-field w-full px-5 py-4 rounded-xl mb-4 text-center tracking-widest" placeholder="••••••" autoFocus />
+              {error && <p className="text-red-400 text-sm mb-4 text-center">Incorrect password</p>}
+              <button type="submit" className="magnetic-btn w-full py-4 rounded-xl bg-primary text-dark font-bold">
+                Login
+              </button>
+            </form>
+            <p className="text-center text-muted text-xs mt-8 font-mono">Default: admin123</p>
+          </div>
+        </div>
+      );
+    }
+
+    function AdminLayout({ children, activeTab }) {
+      const { navigate } = useHashRouter();
+      const [sidebarOpen, setSidebarOpen] = useState(false);
+
+      const tabs = [
+        { id: 'dashboard', label: 'Dashboard', icon: 'layout' },
+        { id: 'profile', label: 'Profile & Bio', icon: 'user' },
+        { id: 'projects', label: 'Projects', icon: 'grid' },
+        { id: 'experience', label: 'Experience', icon: 'briefcase' },
+        { id: 'education', label: 'Education', icon: 'graduationCap' },
+        { id: 'skills', label: 'Skills', icon: 'star' },
+        { id: 'cv', label: 'CV Settings', icon: 'fileText' },
+        { id: 'settings', label: 'Site Settings', icon: 'settings' }
+      ];
+
+      const handleLogout = () => {
+        localStorage.removeItem('admin_auth');
+        navigate('/');
+        window.location.reload();
+      };
+
+      return (
+        <div className="min-h-screen bg-darker flex">
+          <aside className="hidden lg:block admin-sidebar w-64 fixed h-full overflow-y-auto">
+            <div className="p-6">
+              <div className="flex items-center gap-3 mb-12">
+                <span className="text-xl font-black">sms<span className="text-primary">.</span></span>
+                <span className="text-[10px] px-2 py-1 rounded-full bg-primary/10 text-primary uppercase tracking-wider font-bold">Admin</span>
+              </div>
+              <nav className="space-y-1">
+                {tabs.map(t => (
+                  <button key={t.id} onClick={() => navigate(`/admin/${t.id}`)}
+                          className={`admin-nav-item w-full flex items-center gap-3 px-4 py-3 rounded-r-lg text-sm font-medium ${activeTab === t.id ? 'active' : 'text-muted'}`}>
+                    <Icon name={t.icon} size={18} />
+                    {t.label}
+                  </button>
+                ))}
+              </nav>
+              <div className="mt-10 pt-8 border-t border-border">
+                <button onClick={() => navigate('/')} className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-muted hover:text-accent transition-colors">
+                  <Icon name="eye" size={18} /> View Site
+                </button>
+                <button onClick={handleLogout} className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-muted hover:text-red-400 transition-colors">
+                  <Icon name="logOut" size={18} /> Logout
+                </button>
+              </div>
+            </div>
+          </aside>
+
+          <div className="lg:hidden fixed top-0 left-0 right-0 z-50 glass border-b border-border">
+            <div className="flex items-center justify-between p-4">
+              <span className="font-black">sms<span className="text-primary">.</span> <span className="text-xs text-muted font-normal">Admin</span></span>
+              <button onClick={() => setSidebarOpen(!sidebarOpen)}><Icon name="menu" size={24} /></button>
+            </div>
+          </div>
+
+          <div className={`lg:hidden fixed inset-0 z-[60] bg-darker/98 backdrop-blur-2xl transition-transform duration-500 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-10">
+                <span className="font-black text-lg">Admin Panel</span>
+                <button onClick={() => setSidebarOpen(false)} className="p-2"><Icon name="x" size={24} /></button>
+              </div>
+              <nav className="space-y-1">
+                {tabs.map(t => (
+                  <button key={t.id} onClick={() => { navigate(`/admin/${t.id}`); setSidebarOpen(false); }}
+                          className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium ${activeTab === t.id ? 'bg-primary/10 text-accent' : 'text-muted'}`}>
+                    <Icon name={t.icon} size={18} /> {t.label}
+                  </button>
+                ))}
+              </nav>
+              <div className="mt-10 pt-8 border-t border-border space-y-1">
+                <button onClick={() => { navigate('/'); setSidebarOpen(false); }} className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-muted">
+                  <Icon name="eye" size={18} /> View Site
+                </button>
+                <button onClick={handleLogout} className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-muted">
+                  <Icon name="logOut" size={18} /> Logout
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <main className="flex-1 lg:ml-64 pt-16 lg:pt-0">
+            <div className="p-6 lg:p-10 max-w-5xl">
+              {children}
+            </div>
+          </main>
+        </div>
+      );
+    }
+
+    function AdminDashboard() {
+      const { data, cloudStatus, manualSync, syncing } = useData();
+      const { navigate } = useHashRouter();
+
+      const stats = [
+        { label: 'Projects', value: data.projects.length, icon: 'grid', color: 'text-teal-400' },
+        { label: 'Experience', value: data.experience.length, icon: 'briefcase', color: 'text-pink-400' },
+        { label: 'Education', value: data.education.length, icon: 'graduationCap', color: 'text-gold-400' },
+        { label: 'Skills', value: data.skills.length, icon: 'star', color: 'text-mint-400' }
+      ];
+
+      return (
+        <div>
+          <h2 className="text-3xl font-black mb-2">Dashboard</h2>
+          <p className="text-muted mb-10">Welcome back, {data.profile.name}!</p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            {stats.map((s, i) => (
+              <div key={i} className="glass-card rounded-xl p-6">
+                <div className={`w-10 h-10 rounded-lg bg-surface flex items-center justify-center mb-4 ${s.color}`}>
+                  <Icon name={s.icon} size={20} />
+                </div>
+                <div className="text-3xl font-black">{s.value}</div>
+                <div className="text-muted text-sm">{s.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="glass-card rounded-xl p-6 mb-6">
+            <h3 className="text-lg font-bold mb-6">Quick Actions</h3>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {[
+                { label: 'Add New Project', action: () => navigate('/admin/projects'), icon: 'plus' },
+                { label: 'Edit Profile', action: () => navigate('/admin/profile'), icon: 'edit' },
+                { label: 'Add Experience', action: () => navigate('/admin/experience'), icon: 'briefcase' },
+                { label: 'Add Skill', action: () => navigate('/admin/skills'), icon: 'star' }
+              ].map((a, i) => (
+                <button key={i} onClick={a.action} className="flex items-center gap-4 p-5 rounded-xl bg-surface/50 border border-border hover:border-primary/30 transition-all text-left group">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <Icon name={a.icon} size={18} className="text-primary" />
+                  </div>
+                  <span className="font-medium">{a.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="glass-card rounded-xl p-6 mb-6">
+            <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+              <Icon name="globe" size={18} className="text-primary" /> Cloud Status
+            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <span className={`w-2.5 h-2.5 rounded-full ${cloudStatus === 'connected' ? 'bg-primary animate-pulse' : cloudStatus === 'error' ? 'bg-red-500' : 'bg-yellow-500'}`} />
+              <span className="text-sm">
+                {cloudStatus === 'connected' ? 'Connected to Firebase' : cloudStatus === 'error' ? 'Connection error' : 'Using local storage'}
+              </span>
+            </div>
+            <button onClick={manualSync} disabled={syncing} className="px-4 py-2 rounded-lg bg-surface border border-border text-sm hover:border-primary transition-colors flex items-center gap-2 disabled:opacity-50">
+              <Icon name="upload" size={16} /> {syncing ? 'Syncing...' : 'Sync to Cloud Now'}
+            </button>
+          </div>
+
+          <div className="glass-card rounded-xl p-6">
+            <h3 className="text-lg font-bold mb-6">Data Management</h3>
+            <div className="flex flex-wrap gap-3">
+              <button onClick={Storage.export} className="px-5 py-3 rounded-xl bg-surface border border-border text-sm hover:border-primary transition-colors flex items-center gap-2">
+                <Icon name="download" size={16} /> Export Backup
+              </button>
+              <label className="px-5 py-3 rounded-xl bg-surface border border-border text-sm hover:border-primary transition-colors flex items-center gap-2 cursor-pointer">
+                <Icon name="upload" size={16} /> Import Backup
+                <input type="file" accept=".json" className="hidden" onChange={async (e) => {
+                  if (e.target.files[0]) {
+                    try { await Storage.import(e.target.files[0]); window.location.reload(); } catch(err) { alert('Invalid file'); }
+                  }
+                }} />
+              </label>
+            </div>
+            <p className="text-muted text-xs mt-4">Export your data as JSON for backup, or import a previous backup.</p>
+          </div>
+        </div>
+      );
+    }
+
+    function AdminProfile() {
+      const { data, updateSection } = useData();
+      const [profile, setProfile] = useState(data.profile);
+
+      const handleSave = () => updateSection('profile', profile);
+
+      return (
+        <div>
+          <h2 className="text-3xl font-black mb-2">Profile & Bio</h2>
+          <p className="text-muted mb-10">Manage your personal information and bio.</p>
+
+          <div className="space-y-6">
+            <div className="glass-card rounded-xl p-6">
+              <h3 className="text-lg font-bold mb-6">Basic Information</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm text-muted mb-2">Full Name</label>
+                  <input value={profile.name} onChange={e => setProfile({...profile, name: e.target.value})} 
+                         className="input-field w-full px-4 py-3 rounded-xl" />
+                </div>
+                <div>
+                  <label className="block text-sm text-muted mb-2">Professional Title</label>
+                  <input value={profile.title} onChange={e => setProfile({...profile, title: e.target.value})} 
+                         className="input-field w-full px-4 py-3 rounded-xl" />
+                </div>
+                <div>
+                  <label className="block text-sm text-muted mb-2">Location</label>
+                  <input value={profile.location} onChange={e => setProfile({...profile, location: e.target.value})} 
+                         className="input-field w-full px-4 py-3 rounded-xl" />
+                </div>
+                <div>
+                  <label className="block text-sm text-muted mb-2">Website</label>
+                  <input value={profile.website} onChange={e => setProfile({...profile, website: e.target.value})} 
+                         className="input-field w-full px-4 py-3 rounded-xl" placeholder="https://..." />
+                </div>
+                <div>
+                  <label className="block text-sm text-muted mb-2">Email</label>
+                  <input type="email" value={profile.email} onChange={e => setProfile({...profile, email: e.target.value})} 
+                         className="input-field w-full px-4 py-3 rounded-xl" />
+                </div>
+                <div>
+                  <label className="block text-sm text-muted mb-2">Phone</label>
+                  <input value={profile.phone} onChange={e => setProfile({...profile, phone: e.target.value})} 
+                         className="input-field w-full px-4 py-3 rounded-xl" />
+                </div>
+              </div>
+            </div>
+
+            <div className="glass-card rounded-xl p-6">
+              <h3 className="text-lg font-bold mb-6">Avatar Image URL</h3>
+              <input value={profile.avatar} onChange={e => setProfile({...profile, avatar: e.target.value})} 
+                     className="input-field w-full px-4 py-3 rounded-xl mb-4" placeholder="https://..." />
+              {profile.avatar && (
+                <div className="w-32 h-32 rounded-xl overflow-hidden border border-border">
+                  <img src={profile.avatar} alt="Avatar preview" className="w-full h-full object-cover" />
+                </div>
+              )}
+            </div>
+
+            <div className="glass-card rounded-xl p-6">
+              <h3 className="text-lg font-bold mb-6">Social Links</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {Object.keys(profile.social).map(key => (
+                  <div key={key}>
+                    <label className="block text-sm text-muted mb-2 capitalize">{key}</label>
+                    <input value={profile.social[key]} 
+                           onChange={e => setProfile({...profile, social: {...profile.social, [key]: e.target.value}})} 
+                           className="input-field w-full px-4 py-3 rounded-xl" placeholder={`https://${key}.com/...`} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="glass-card rounded-xl p-6">
+              <h3 className="text-lg font-bold mb-6">Biography</h3>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm text-muted mb-2">Arabic Bio (About Page)</label>
+                  <textarea value={profile.bioAr} onChange={e => setProfile({...profile, bioAr: e.target.value})} 
+                            rows={4} className="input-field w-full px-4 py-3 rounded-xl resize-none" style={{direction: 'rtl'}} />
+                </div>
+                <div>
+                  <label className="block text-sm text-muted mb-2">English Bio</label>
+                  <textarea value={profile.bioEn} onChange={e => setProfile({...profile, bioEn: e.target.value})} 
+                            rows={4} className="input-field w-full px-4 py-3 rounded-xl resize-none" />
+                </div>
+              </div>
+            </div>
+
+            <button onClick={handleSave} className="magnetic-btn px-8 py-4 rounded-xl bg-primary text-dark font-bold flex items-center gap-2">
+              <Icon name="save" size={18} /> Save Changes
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    function AdminProjects() {
+      const { data, updateSection } = useData();
+      const [projects, setProjects] = useState(data.projects);
+      const [editing, setEditing] = useState(null);
+      const [form, setForm] = useState({ title: '', category: 'research', description: '', thumbnail: '', tools: '', link: '', date: '', featured: false });
+
+      const handleSave = () => updateSection('projects', projects);
+
+      const handleAdd = () => {
+        const newProject = {
+          id: Date.now().toString(),
+          title: form.title,
+          category: form.category,
+          description: form.description,
+          thumbnail: form.thumbnail || 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&q=80',
+          images: [],
+          tools: form.tools.split(',').map(t => t.trim()).filter(Boolean),
+          link: form.link,
+          date: form.date,
+          featured: form.featured
+        };
+        setProjects([...projects, newProject]);
+        setForm({ title: '', category: 'research', description: '', thumbnail: '', tools: '', link: '', date: '', featured: false });
+        setEditing(null);
+      };
+
+      const handleUpdate = () => {
+        setProjects(projects.map(p => p.id === editing ? { ...p, ...form, tools: form.tools.split(',').map(t => t.trim()).filter(Boolean) } : p));
+        setEditing(null);
+        setForm({ title: '', category: 'research', description: '', thumbnail: '', tools: '', link: '', date: '', featured: false });
+      };
+
+      const handleDelete = (id) => {
+        if (confirm('Delete this project?')) setProjects(projects.filter(p => p.id !== id));
+      };
+
+      const startEdit = (p) => {
+        setEditing(p.id);
+        setForm({ ...p, tools: p.tools.join(', ') });
+      };
+
+      return (
+        <div>
+          <h2 className="text-3xl font-black mb-2">Projects</h2>
+          <p className="text-muted mb-10">Manage your research projects and analyses.</p>
+
+          <div className="glass-card rounded-xl p-6 mb-8">
+            <h3 className="text-lg font-bold mb-6">{editing ? 'Edit Project' : 'Add New Project'}</h3>
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <input value={form.title} onChange={e => setForm({...form, title: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl" placeholder="Project Title" />
+              <select value={form.category} onChange={e => setForm({...form, category: e.target.value})} 
+                      className="input-field px-4 py-3 rounded-xl">
+                <option value="research">Research</option>
+                <option value="qc">QC & Analysis</option>
+              </select>
+              <input value={form.date} onChange={e => setForm({...form, date: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl" placeholder="Year (e.g. 2024)" />
+              <input value={form.link} onChange={e => setForm({...form, link: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl" placeholder="Project Link (optional)" />
+              <input value={form.thumbnail} onChange={e => setForm({...form, thumbnail: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl md:col-span-2" placeholder="Thumbnail Image URL" />
+              <input value={form.tools} onChange={e => setForm({...form, tools: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl md:col-span-2" placeholder="Tools/Techniques (comma separated)" />
+              <textarea value={form.description} onChange={e => setForm({...form, description: e.target.value})} 
+                        rows={3} className="input-field px-4 py-3 rounded-xl md:col-span-2 resize-none" placeholder="Project Description" />
+              <label className="flex items-center gap-3 md:col-span-2 cursor-pointer">
+                <input type="checkbox" checked={form.featured} onChange={e => setForm({...form, featured: e.target.checked})} className="w-4 h-4 accent-primary" />
+                <span className="text-sm">Featured on homepage</span>
+              </label>
+            </div>
+            <div className="flex gap-3">
+              {editing ? (
+                <>
+                  <button onClick={handleUpdate} className="magnetic-btn px-6 py-3 rounded-lg bg-primary text-dark font-bold text-sm">Update Project</button>
+                  <button onClick={() => { setEditing(null); setForm({ title: '', category: 'research', description: '', thumbnail: '', tools: '', link: '', date: '', featured: false }); }} 
+                          className="px-6 py-3 rounded-lg border border-border text-muted hover:border-primary text-sm transition-colors">Cancel</button>
+                </>
+              ) : (
+                <button onClick={handleAdd} className="magnetic-btn px-6 py-3 rounded-lg bg-primary text-dark font-bold text-sm flex items-center gap-2">
+                  <Icon name="plus" size={16} /> Add Project
+                </button>
+              )}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            {projects.map(p => (
+              <div key={p.id} className="glass-card rounded-xl p-4 flex items-center gap-4">
+                <img src={p.thumbnail} alt={p.title} className="w-20 h-14 rounded-lg object-cover border border-border" />
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <h4 className="font-bold truncate">{p.title}</h4>
+                    {p.featured && <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary shrink-0">Featured</span>}
+                  </div>
+                  <p className="text-sm text-muted">{p.category} &bull; {p.date}</p>
+                </div>
+                <div className="flex gap-2">
+                  <button onClick={() => startEdit(p)} className="p-2.5 rounded-lg bg-surface border border-border hover:border-primary transition-colors">
+                    <Icon name="edit" size={16} className="text-muted" />
+                  </button>
+                  <button onClick={() => handleDelete(p.id)} className="p-2.5 rounded-lg bg-surface border border-border hover:border-red-500 transition-colors">
+                    <Icon name="trash" size={16} className="text-muted" />
+                  </button>
+                </div>
+              </div>
+            ))}
+            {projects.length === 0 && <p className="text-muted text-center py-8">No projects yet. Add your first one above.</p>}
+          </div>
+
+          {projects.length > 0 && (
+            <button onClick={handleSave} className="mt-6 magnetic-btn px-8 py-4 rounded-xl bg-primary text-dark font-bold flex items-center gap-2">
+              <Icon name="save" size={18} /> Save All Changes
+            </button>
+          )}
+        </div>
+      );
+    }
+
+    function AdminExperience() {
+      const { data, updateSection } = useData();
+      const [experience, setExperience] = useState(data.experience);
+      const [editing, setEditing] = useState(null);
+      const [form, setForm] = useState({ company: '', role: '', period: '', description: '', current: false });
+
+      const handleSave = () => updateSection('experience', experience);
+
+      const handleAdd = () => {
+        const newExp = { id: Date.now().toString(), ...form };
+        setExperience([...experience, newExp]);
+        setForm({ company: '', role: '', period: '', description: '', current: false });
+      };
+
+      const handleUpdate = () => {
+        setExperience(experience.map(e => e.id === editing ? { ...e, ...form } : e));
+        setEditing(null);
+        setForm({ company: '', role: '', period: '', description: '', current: false });
+      };
+
+      const handleDelete = (id) => {
+        if (confirm('Delete this entry?')) setExperience(experience.filter(e => e.id !== id));
+      };
+
+      const startEdit = (e) => {
+        setEditing(e.id);
+        setForm({ company: e.company, role: e.role, period: e.period, description: e.description, current: e.current });
+      };
+
+      return (
+        <div>
+          <h2 className="text-3xl font-black mb-2">Experience</h2>
+          <p className="text-muted mb-10">Manage your work experience.</p>
+
+          <div className="glass-card rounded-xl p-6 mb-8">
+            <h3 className="text-lg font-bold mb-6">{editing ? 'Edit Entry' : 'Add Experience'}</h3>
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <input value={form.company} onChange={e => setForm({...form, company: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl" placeholder="Company / Lab" />
+              <input value={form.role} onChange={e => setForm({...form, role: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl" placeholder="Role / Position" />
+              <input value={form.period} onChange={e => setForm({...form, period: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl" placeholder="Period (e.g. 2022 - 2024)" />
+              <label className="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" checked={form.current} onChange={e => setForm({...form, current: e.target.checked})} className="w-4 h-4 accent-primary" />
+                <span className="text-sm">Current Position</span>
+              </label>
+              <textarea value={form.description} onChange={e => setForm({...form, description: e.target.value})} 
+                        rows={3} className="input-field px-4 py-3 rounded-xl md:col-span-2 resize-none" placeholder="Description of your role and achievements" />
+            </div>
+            <div className="flex gap-3">
+              {editing ? (
+                <>
+                  <button onClick={handleUpdate} className="magnetic-btn px-6 py-3 rounded-lg bg-primary text-dark font-bold text-sm">Update</button>
+                  <button onClick={() => { setEditing(null); setForm({ company: '', role: '', period: '', description: '', current: false }); }} 
+                          className="px-6 py-3 rounded-lg border border-border text-muted hover:border-primary text-sm transition-colors">Cancel</button>
+                </>
+              ) : (
+                <button onClick={handleAdd} className="magnetic-btn px-6 py-3 rounded-lg bg-primary text-dark font-bold text-sm flex items-center gap-2">
+                  <Icon name="plus" size={16} /> Add Experience
+                </button>
+              )}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            {experience.map(e => (
+              <div key={e.id} className="glass-card rounded-xl p-5 flex items-center justify-between">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h4 className="font-bold">{e.role}</h4>
+                    {e.current && <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">Current</span>}
+                  </div>
+                  <p className="text-sm text-muted">{e.company} &bull; {e.period}</p>
+                </div>
+                <div className="flex gap-2">
+                  <button onClick={() => startEdit(e)} className="p-2.5 rounded-lg bg-surface border border-border hover:border-primary transition-colors">
+                    <Icon name="edit" size={16} className="text-muted" />
+                  </button>
+                  <button onClick={() => handleDelete(e.id)} className="p-2.5 rounded-lg bg-surface border border-border hover:border-red-500 transition-colors">
+                    <Icon name="trash" size={16} className="text-muted" />
+                  </button>
+                </div>
+              </div>
+            ))}
+            {experience.length === 0 && <p className="text-muted text-center py-8">No experience entries yet.</p>}
+          </div>
+
+          {experience.length > 0 && (
+            <button onClick={handleSave} className="mt-6 magnetic-btn px-8 py-4 rounded-xl bg-primary text-dark font-bold flex items-center gap-2">
+              <Icon name="save" size={18} /> Save All Changes
+            </button>
+          )}
+        </div>
+      );
+    }
+
+    function AdminEducation() {
+      const { data, updateSection } = useData();
+      const [education, setEducation] = useState(data.education);
+      const [editing, setEditing] = useState(null);
+      const [form, setForm] = useState({ institution: '', degree: '', field: '', year: '', description: '' });
+
+      const handleSave = () => updateSection('education', education);
+
+      const handleAdd = () => {
+        const newEdu = { id: Date.now().toString(), ...form };
+        setEducation([...education, newEdu]);
+        setForm({ institution: '', degree: '', field: '', year: '', description: '' });
+      };
+
+      const handleUpdate = () => {
+        setEducation(education.map(e => e.id === editing ? { ...e, ...form } : e));
+        setEditing(null);
+        setForm({ institution: '', degree: '', field: '', year: '', description: '' });
+      };
+
+      const handleDelete = (id) => {
+        if (confirm('Delete this entry?')) setEducation(education.filter(e => e.id !== id));
+      };
+
+      const startEdit = (e) => {
+        setEditing(e.id);
+        setForm({ institution: e.institution, degree: e.degree, field: e.field, year: e.year, description: e.description });
+      };
+
+      return (
+        <div>
+          <h2 className="text-3xl font-black mb-2">Education</h2>
+          <p className="text-muted mb-10">Manage your education and certifications.</p>
+
+          <div className="glass-card rounded-xl p-6 mb-8">
+            <h3 className="text-lg font-bold mb-6">{editing ? 'Edit Entry' : 'Add Education'}</h3>
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <input value={form.institution} onChange={e => setForm({...form, institution: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl" placeholder="Institution / University" />
+              <input value={form.degree} onChange={e => setForm({...form, degree: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl" placeholder="Degree (e.g. Bachelor's)" />
+              <input value={form.field} onChange={e => setForm({...form, field: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl" placeholder="Field of Study" />
+              <input value={form.year} onChange={e => setForm({...form, year: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl" placeholder="Year (e.g. 2024)" />
+              <textarea value={form.description} onChange={e => setForm({...form, description: e.target.value})} 
+                        rows={3} className="input-field px-4 py-3 rounded-xl md:col-span-2 resize-none" placeholder="Description (optional)" />
+            </div>
+            <div className="flex gap-3">
+              {editing ? (
+                <>
+                  <button onClick={handleUpdate} className="magnetic-btn px-6 py-3 rounded-lg bg-primary text-dark font-bold text-sm">Update</button>
+                  <button onClick={() => { setEditing(null); setForm({ institution: '', degree: '', field: '', year: '', description: '' }); }} 
+                          className="px-6 py-3 rounded-lg border border-border text-muted hover:border-primary text-sm transition-colors">Cancel</button>
+                </>
+              ) : (
+                <button onClick={handleAdd} className="magnetic-btn px-6 py-3 rounded-lg bg-primary text-dark font-bold text-sm flex items-center gap-2">
+                  <Icon name="plus" size={16} /> Add Education
+                </button>
+              )}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            {education.map(e => (
+              <div key={e.id} className="glass-card rounded-xl p-5 flex items-center justify-between">
+                <div>
+                  <h4 className="font-bold">{e.degree} in {e.field}</h4>
+                  <p className="text-sm text-muted">{e.institution} &bull; {e.year}</p>
+                </div>
+                <div className="flex gap-2">
+                  <button onClick={() => startEdit(e)} className="p-2.5 rounded-lg bg-surface border border-border hover:border-primary transition-colors">
+                    <Icon name="edit" size={16} className="text-muted" />
+                  </button>
+                  <button onClick={() => handleDelete(e.id)} className="p-2.5 rounded-lg bg-surface border border-border hover:border-red-500 transition-colors">
+                    <Icon name="trash" size={16} className="text-muted" />
+                  </button>
+                </div>
+              </div>
+            ))}
+            {education.length === 0 && <p className="text-muted text-center py-8">No education entries yet.</p>}
+          </div>
+
+          {education.length > 0 && (
+            <button onClick={handleSave} className="mt-6 magnetic-btn px-8 py-4 rounded-xl bg-primary text-dark font-bold flex items-center gap-2">
+              <Icon name="save" size={18} /> Save All Changes
+            </button>
+          )}
+        </div>
+      );
+    }
+
+    function AdminSkills() {
+      const { data, updateSection } = useData();
+      const [skills, setSkills] = useState(data.skills);
+      const [editing, setEditing] = useState(null);
+      const [form, setForm] = useState({ name: '', category: 'technical', level: 80 });
+
+      const handleSave = () => updateSection('skills', skills);
+
+      const handleAdd = () => {
+        const newSkill = { id: Date.now().toString(), ...form };
+        setSkills([...skills, newSkill]);
+        setForm({ name: '', category: 'technical', level: 80 });
+      };
+
+      const handleUpdate = () => {
+        setSkills(skills.map(s => s.id === editing ? { ...s, ...form } : s));
+        setEditing(null);
+        setForm({ name: '', category: 'technical', level: 80 });
+      };
+
+      const handleDelete = (id) => {
+        if (confirm('Delete this skill?')) setSkills(skills.filter(s => s.id !== id));
+      };
+
+      const startEdit = (s) => {
+        setEditing(s.id);
+        setForm({ name: s.name, category: s.category, level: s.level });
+      };
+
+      const categories = { technical: 'Technical', tool: 'Tools', soft: 'Soft Skills' };
+
+      return (
+        <div>
+          <h2 className="text-3xl font-black mb-2">Skills</h2>
+          <p className="text-muted mb-10">Manage your skills and proficiency levels.</p>
+
+          <div className="glass-card rounded-xl p-6 mb-8">
+            <h3 className="text-lg font-bold mb-6">{editing ? 'Edit Skill' : 'Add Skill'}</h3>
+            <div className="grid md:grid-cols-3 gap-4 mb-4">
+              <input value={form.name} onChange={e => setForm({...form, name: e.target.value})} 
+                     className="input-field px-4 py-3 rounded-xl" placeholder="Skill Name" />
+              <select value={form.category} onChange={e => setForm({...form, category: e.target.value})} 
+                      className="input-field px-4 py-3 rounded-xl">
+                <option value="technical">Technical</option>
+                <option value="tool">Tool</option>
+                <option value="soft">Soft Skill</option>
+              </select>
+              <div className="flex items-center gap-3">
+                <input type="range" min="0" max="100" value={form.level} onChange={e => setForm({...form, level: parseInt(e.target.value)})} 
+                       className="flex-1 accent-primary" />
+                <span className="text-sm font-mono w-10">{form.level}%</span>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              {editing ? (
+                <>
+                  <button onClick={handleUpdate} className="magnetic-btn px-6 py-3 rounded-lg bg-primary text-dark font-bold text-sm">Update</button>
+                  <button onClick={() => { setEditing(null); setForm({ name: '', category: 'technical', level: 80 }); }} 
+                          className="px-6 py-3 rounded-lg border border-border text-muted hover:border-primary text-sm transition-colors">Cancel</button>
+                </>
+              ) : (
+                <button onClick={handleAdd} className="magnetic-btn px-6 py-3 rounded-lg bg-primary text-dark font-bold text-sm flex items-center gap-2">
+                  <Icon name="plus" size={16} /> Add Skill
+                </button>
+              )}
+            </div>
+          </div>
+
+          {Object.entries(categories).map(([cat, label]) => {
+            const catSkills = skills.filter(s => s.category === cat);
+            if (catSkills.length === 0) return null;
+            return (
+              <div key={cat} className="mb-8">
+                <h3 className="text-sm font-bold text-muted uppercase tracking-wider mb-4">{label}</h3>
+                <div className="space-y-3">
+                  {catSkills.map(s => (
+                    <div key={s.id} className="glass-card rounded-xl p-5">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="font-medium">{s.name}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm text-muted font-mono">{s.level}%</span>
+                          <button onClick={() => startEdit(s)} className="p-1.5 rounded hover:bg-surface transition-colors">
+                            <Icon name="edit" size={14} className="text-muted" />
+                          </button>
+                          <button onClick={() => handleDelete(s.id)} className="p-1.5 rounded hover:bg-surface transition-colors">
+                            <Icon name="trash" size={14} className="text-muted" />
+                          </button>
+                        </div>
+                      </div>
+                      <div className="skill-bar"><div className="skill-bar-fill" style={{width: `${s.level}%`}} /></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+
+          {skills.length === 0 && <p className="text-muted text-center py-8">No skills added yet.</p>}
+
+          {skills.length > 0 && (
+            <button onClick={handleSave} className="mt-6 magnetic-btn px-8 py-4 rounded-xl bg-primary text-dark font-bold flex items-center gap-2">
+              <Icon name="save" size={18} /> Save All Changes
+            </button>
+          )}
+        </div>
+      );
+    }
+
+    function AdminCVSettings() {
+      const { data, updateSection } = useData();
+      const [stats, setStats] = useState(data.stats || defaultData.stats);
+
+      const handleSave = () => updateSection('stats', stats);
+
+      return (
+        <div>
+          <h2 className="text-3xl font-black mb-2">CV & Stats Settings</h2>
+          <p className="text-muted mb-10">Customize your homepage stats and CV display.</p>
+
+          <div className="glass-card rounded-xl p-6 mb-6">
+            <h3 className="text-lg font-bold mb-6">Homepage Stats (Editable)</h3>
+            <p className="text-muted text-sm mb-6">These values appear on the homepage stats section. You can set them manually or they will auto-update based on your data.</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm text-muted mb-2">Years Experience</label>
+                <input value={stats.years} onChange={e => setStats({...stats, years: e.target.value})} 
+                       className="input-field w-full px-4 py-3 rounded-xl" placeholder="e.g. 2+" />
+              </div>
+              <div>
+                <label className="block text-sm text-muted mb-2">Projects Done</label>
+                <input value={stats.projects} onChange={e => setStats({...stats, projects: e.target.value})} 
+                       className="input-field w-full px-4 py-3 rounded-xl" placeholder="e.g. 15+" />
+              </div>
+              <div>
+                <label className="block text-sm text-muted mb-2">Samples Analyzed</label>
+                <input value={stats.samples} onChange={e => setStats({...stats, samples: e.target.value})} 
+                       className="input-field w-full px-4 py-3 rounded-xl" placeholder="e.g. 200+" />
+              </div>
+              <div>
+                <label className="block text-sm text-muted mb-2">Coffee Cups</label>
+                <input value={stats.coffee} onChange={e => setStats({...stats, coffee: e.target.value})} 
+                       className="input-field w-full px-4 py-3 rounded-xl" placeholder="e.g. ∞" />
+              </div>
+            </div>
+          </div>
+
+          <div className="glass-card rounded-xl p-6 mb-6">
+            <h3 className="text-lg font-bold mb-4">CV Page Options</h3>
+            <p className="text-muted text-sm mb-6">The CV page automatically pulls data from your Profile, Experience, Education, Skills, and Projects.</p>
+            <div className="space-y-3">
+              <label className="flex items-center gap-3 p-4 rounded-xl bg-surface/50 cursor-pointer">
+                <input type="checkbox" defaultChecked className="w-4 h-4 accent-primary" />
+                <span className="text-sm">Show projects section in CV</span>
+              </label>
+              <label className="flex items-center gap-3 p-4 rounded-xl bg-surface/50 cursor-pointer">
+                <input type="checkbox" defaultChecked className="w-4 h-4 accent-primary" />
+                <span className="text-sm">Show skill percentages</span>
+              </label>
+              <label className="flex items-center gap-3 p-4 rounded-xl bg-surface/50 cursor-pointer">
+                <input type="checkbox" defaultChecked className="w-4 h-4 accent-primary" />
+                <span className="text-sm">Show social links in CV header</span>
+              </label>
+            </div>
+          </div>
+
+          <div className="glass-card rounded-xl p-6">
+            <h3 className="text-lg font-bold mb-4">Print Styles</h3>
+            <p className="text-muted text-sm mb-6">When you print the CV page (Ctrl+P or Cmd+P), it will use a clean, optimized layout.</p>
+            <button onClick={() => window.open('#/cv', '_blank')} className="magnetic-btn px-6 py-3 rounded-lg bg-primary text-dark font-bold text-sm flex items-center gap-2">
+              <Icon name="eye" size={16} /> Preview CV Page
+            </button>
+          </div>
+
+          <button onClick={handleSave} className="mt-6 magnetic-btn px-8 py-4 rounded-xl bg-primary text-dark font-bold flex items-center gap-2">
+            <Icon name="save" size={18} /> Save Stats
+          </button>
+        </div>
+      );
+    }
+
+    function AdminSiteSettings() {
+      const { data, updateSection, cloudStatus, syncing } = useData();
+      const [settings, setSettings] = useState(data.settings);
+
+      const handleSave = () => updateSection('settings', settings);
+
+      return (
+        <div>
+          <h2 className="text-3xl font-black mb-2">Site Settings</h2>
+          <p className="text-muted mb-10">Customize colors, SEO, Firebase, and other site-wide settings.</p>
+
+          <div className="glass-card rounded-xl p-6 mb-6">
+            <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+              <Icon name="globe" size={20} className="text-primary" /> Firebase Database
+            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <span className={`w-2.5 h-2.5 rounded-full ${cloudStatus === 'connected' ? 'bg-primary animate-pulse' : cloudStatus === 'error' ? 'bg-red-500' : 'bg-yellow-500'}`} />
+              <span className="text-sm">
+                {cloudStatus === 'connected' ? 'Connected to Firebase' : cloudStatus === 'error' ? 'Connection error' : 'Checking...'}
+              </span>
+              {syncing && <span className="text-xs text-muted animate-pulse ml-2">Syncing...</span>}
+            </div>
+            <div className="grid md:grid-cols-2 gap-3 mb-4">
+              <div className="p-3 rounded-lg bg-surface/50 border border-border">
+                <span className="text-xs text-muted block mb-1">Project ID</span>
+                <span className="text-sm font-mono">zizd-11eff</span>
+              </div>
+              <div className="p-3 rounded-lg bg-surface/50 border border-border">
+                <span className="text-xs text-muted block mb-1">Doc Path</span>
+                <span className="text-sm font-mono">biology-portfolio</span>
+              </div>
+            </div>
+            <p className="text-muted text-xs">Firebase is configured. All changes are automatically synced to the cloud under the biology-portfolio document.</p>
+          </div>
+
+          <div className="glass-card rounded-xl p-6 mb-6">
+            <h3 className="text-lg font-bold mb-6">Theme Colors</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm text-muted mb-2">Primary Color</label>
+                <div className="flex gap-3">
+                  <input type="color" value={settings.theme.primary} 
+                         onChange={e => setSettings({...settings, theme: {...settings.theme, primary: e.target.value}})} 
+                         className="w-12 h-12 rounded-lg cursor-pointer border-0" />
+                  <input value={settings.theme.primary} 
+                         onChange={e => setSettings({...settings, theme: {...settings.theme, primary: e.target.value}})} 
+                         className="input-field flex-1 px-4 py-3 rounded-xl font-mono text-sm" />
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm text-muted mb-2">Accent Color</label>
+                <div className="flex gap-3">
+                  <input type="color" value={settings.theme.accent} 
+                         onChange={e => setSettings({...settings, theme: {...settings.theme, accent: e.target.value}})} 
+                         className="w-12 h-12 rounded-lg cursor-pointer border-0" />
+                  <input value={settings.theme.accent} 
+                         onChange={e => setSettings({...settings, theme: {...settings.theme, accent: e.target.value}})} 
+                         className="input-field flex-1 px-4 py-3 rounded-xl font-mono text-sm" />
+                </div>
+              </div>
+            </div>
+            <p className="text-muted text-xs mt-4">Note: Color changes require a page refresh to take full effect.</p>
+          </div>
+
+          <div className="glass-card rounded-xl p-6 mb-6">
+            <h3 className="text-lg font-bold mb-6">SEO & Meta</h3>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm text-muted mb-2">Page Title</label>
+                <input value={settings.site.metaTitle} 
+                       onChange={e => setSettings({...settings, site: {...settings.site, metaTitle: e.target.value}})} 
+                       className="input-field w-full px-4 py-3 rounded-xl" />
+              </div>
+              <div>
+                <label className="block text-sm text-muted mb-2">Meta Description</label>
+                <textarea value={settings.site.metaDescription} 
+                          onChange={e => setSettings({...settings, site: {...settings.site, metaDescription: e.target.value}})} 
+                          rows={3} className="input-field w-full px-4 py-3 rounded-xl resize-none" />
+              </div>
+            </div>
+          </div>
+
+          <div className="glass-card rounded-xl p-6 mb-6">
+            <h3 className="text-lg font-bold mb-4">Admin Password</h3>
+            <p className="text-muted text-sm mb-4">Current: <span className="font-mono text-primary">admin123</span></p>
+            <div className="flex gap-3">
+              <input type="password" className="input-field flex-1 px-4 py-3 rounded-xl" placeholder="New password" disabled />
+              <button className="px-4 py-3 rounded-lg bg-surface border border-border text-muted text-sm" disabled>Coming Soon</button>
+            </div>
+          </div>
+
+          <button onClick={handleSave} className="magnetic-btn px-8 py-4 rounded-xl bg-primary text-dark font-bold flex items-center gap-2">
+            <Icon name="save" size={18} /> Save Settings
+          </button>
+        </div>
+      );
+    }
+
+    function App() {
+      const { path, navigate } = useHashRouter();
+      const [adminAuth, setAdminAuth] = useState(false);
+
+      useEffect(() => {
+        setAdminAuth(localStorage.getItem('admin_auth') === 'true');
+      }, []);
+
+      const isAdmin = path.startsWith('/admin');
+
+      if (isAdmin && !adminAuth) {
+        return <AdminLogin onLogin={() => setAdminAuth(true)} />;
+      }
+
+      if (isAdmin) {
+        const adminTab = path.split('/')[2] || 'dashboard';
+        return (
+          <DataProvider>
+            <AdminLayout activeTab={adminTab}>
+              {adminTab === 'dashboard' && <AdminDashboard />}
+              {adminTab === 'profile' && <AdminProfile />}
+              {adminTab === 'projects' && <AdminProjects />}
+              {adminTab === 'experience' && <AdminExperience />}
+              {adminTab === 'education' && <AdminEducation />}
+              {adminTab === 'skills' && <AdminSkills />}
+              {adminTab === 'cv' && <AdminCVSettings />}
+              {adminTab === 'settings' && <AdminSiteSettings />}
+            </AdminLayout>
+          </DataProvider>
+        );
+      }
+
+      return (
+        <DataProvider>
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <main className="flex-1">
+              {path === '/' && <Home />}
+              {path === '/work' && <Work />}
+              {path.startsWith('/project/') && <ProjectDetail id={path.split('/')[2]} />}
+              {path === '/about' && <About />}
+              {path === '/cv' && <CV />}
+              {path === '/contact' && <Contact />}
+            </main>
+            <Footer />
+          </div>
+        </DataProvider>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
